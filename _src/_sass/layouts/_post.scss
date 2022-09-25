@@ -1,0 +1,24 @@
+.layout_post{
+    @extend .content_text_font_size;
+    &__header, &__content, &__footer, &__disqus{
+        @extend .elements_box;
+    }
+    &__comments{
+        background-color: $texts__background;
+        color: $color__text;
+        font-size: 1rem;
+        &-count{}
+    }
+    &__share-fb, &__share-ln, &__share-tw{
+        @extend .buttons_style;
+    }
+
+    &__author{
+        &-img{
+            border-radius: 50%;
+            border: 1px solid $color__text;
+            padding: 3px;
+        }
+    }
+
+}

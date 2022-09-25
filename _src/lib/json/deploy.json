@@ -1,0 +1,18 @@
+{
+  "src": {
+    "git": {
+      "init": true,
+      "origin": "origin",
+      "remote": "git@github.com:williamcanin/williamcanin.github.io.git",
+      "branch": "main"
+    }
+  },
+  "public": {
+    "git": {
+      "init": true,
+      "origin": "origin",
+      "remote": "git@github.com:williamcanin/williamcanin.github.io.git",
+      "branch": "public"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.layout_postlist{
+
+    &__header, &__content{
+        @extend .elements_box;
+        @extend .content_text_font_size;
+    }
+    &__comments{
+        background-color: $texts__background;
+        font-size: 0.97rem;
+        color: $color__text;
+        &-count{}
+    }
+    &__time{
+        background-color: $texts__background;
+        opacity: 0.77;
+        color: $color__text;
+        border-radius: 5px;
+    }
+    &__excerpted{
+        background-color: $texts__background;
+        border-radius: 5px;
+        line-height: 1.8rem;
+    }
+    &__comments{
+        .fa-comments{
+            margin: 0px 4px;
+        }
+        .disqus-comment-count{
+            color: $color__clickable;
+        }
+    }
+    &__pagination{
+        &-newer{
+            @extend .buttons_style;
+            border-radius: 0px;
+            border: 1px solid $color__clickable;
+            &:hover{
+                border: 1px solid $color__clickable;
+            }
+        }
+        &-counter{
+            color: $color__clickable;
+            background-color: $elements__background;
+            border: 1px solid;
+            &:hover{
+                color: $color__clickable;
+                background-color: $elements__background;
+                border: 1px solid;
+            }
+        }
+        &-older{
+            @extend .buttons_style;
+            border-radius: 0px;
+            border: 1px solid $color__clickable;
+            &:hover{
+                border: 1px solid $color__clickable;
+            }
+        }
+    }
+}

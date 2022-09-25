@@ -1,0 +1,129 @@
+# the base hostname & protocol for your site, e.g. http://example.com
+url: "https://williamcanin.dev"
+# the subpath of your site, e.g. /blog/
+baseurl: "/typing-jekyll-template/"
+
+
+# Plugins Gemfile
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+
+# Plugins de player - Jektify
+jektify:
+  enable: true
+  open: true
+  toggle:
+    enable: true
+  spotify:
+    user: # "you_user_spotify"
+    text: "See me no Spotify"
+  sass:
+    jekyll: true
+    other:
+      dir: "way/to/your/SASS"
+  title:
+    enable: false
+    text: "Music name"
+  description:
+    enable: false
+    text: |
+      Jekyll plugin to generate html snippets for embedding Spotify Musics.
+      To listen to the full song, open your Spotify and start these musics.
+
+
+# Attention! Do not change the information below as it is
+# for development unless you know what you are doing.
+
+include: ['_pages']
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+
+permalink: /blog/:title/
+
+layouts_dir: _src/_layouts
+includes_dir: _src/_includes
+plugins_dir: _src/_plugins
+
+destination: public
+port: 4000
+host: localhost
+
+sass:
+  load_paths:
+  - _src/_sass
+  - node_modules
+  - vendor/node_modules
+  style: compressed
+
+feed:
+  path: /blog/feed.xml
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  profile: false
+
+tag_page_layout: tag
+tag_page_dir: blog/tags
+tag_permalink_style: pretty
+
+imager:
+  dir_posts: "assets/images/posts"
+
+# Readingtime and Datelang
+## supported languages:
+### ch_CH - Chinese | de_DE - Deutschland | en_US - English
+### es_ES - Spanish | fr_FR - French | it_IT - Italian
+### ja_JP - Japan | pt_PT - Portuguese | ru_RU - Russian
+reading_time:
+  locale: en_US
+
+datelang:
+  locale: en_US
+  reload: true
+
+pagination:
+  enabled: true
+  debug: false
+  collection: 'posts'
+  sort_field: 'date'
+  sort_reverse: true
+  per_page: 5
+  permalink: '/:num/'
+  locale: ''
+  title: ':title - Page :num'
+  limit: 0
+  extension: html
+  indexpage: 'index'
+
+gist:
+  noscript: false
+
+exclude:
+  - temp
+  - tmp
+  - .hidden
+  - yarn-error.log
+  - node_modules
+  - _src
+  - vendor
+  - cache
+  - Gemfile
+  - Gemfile.lock
+  - screenshot.png
+  - CHANGELOG
+  - COPYING
+  - package-lock.json
+  - package.json
+  - README.md
+  - README-ptbr.md
+  - gulpfile.js
+  - Rakefile
+  - yarn.lock
+  - Makefile

@@ -1,0 +1,6 @@
+.layout_page{
+    @extend .content_text_font_size;
+    &__header, &__content{
+        @extend .elements_box;
+    }
+}

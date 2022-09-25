@@ -1,0 +1,49 @@
+/* Theme Cloudysky
+––––––––––––––––––––––––––––––––––––––––––––––––––  */
+// Default
+$background__full: #f7f7f7 !default;
+$elements__background: #f3f3f3 !default;
+$color__clickable: #587feb !default;
+$color__text: #000 !default;
+$texts__background: rgba(226, 217, 218, 0.42) !default;
+$hr__color: #000 !default;
+$elements__box_border_color: #b4b4b4;
+$terminal__shadow_color: #000;
+$buttons__color: #fff !default;
+
+// Keyframes
+$keyframe__pulse_color_primary: rgba(26, 25, 25, 0.158);
+$keyframe__pulse_color_secondary: rgba(48, 47, 47, 0.103);
+
+// Highlighter
+$highlight__background: #f7f7f7;
+$highlight__border_color: #b4b4b4;
+$highlight__color: #000;
+
+// Footer
+$footer__bg: #fff !default;
+
+// Blockquote
+$blockquote__background: #fff;
+
+// Table
+$table__thead_th_background: #f7f7f7;
+$table__thead_th_color: #000;
+$table__thead_th_border: #b4b4b4;
+$table__tbody_td_background: #f7f7f7;
+$table__tbody_td_color: #000;
+$table__tbody_td_border: #b4b4b4;
+
+// Gist theme
+$gist__background: #f3f3f3;
+$gist__code_color: black;
+$gist__border: #e7e7e7 #e7e7e7 #e7e7e7;
+$gist__ln_background: #f3f3f3;
+$gist__ln_color: black;
+$gist__meta_color: black;
+$gist__meta_link_color: #587feb;
+$gist__comment_color: #386931;
+$gist__function_color: #246194;
+$gist__fn_color: #ad8500;
+$gist__string_color: #c55829;
+$gist__var_color: #132b44;

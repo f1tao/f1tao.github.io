@@ -1,0 +1,106 @@
+# In this file you can enable and disable template features.
+
+maintenance:
+  enable: false
+# To disable blogging, leave the value 'false'. Go to the blog.md file
+# and set the menu => enable property to 'false' too.
+blog:
+  enable: true
+  feed:
+    enable: true
+google:
+  analytics:
+    enable: true
+global:
+  links:
+    underline: true
+home:
+  animation: true
+  terminal:
+    enable: false
+    animation: true
+sidebar:
+  animation: true
+  fixed: true
+  avatar:
+    enable: true
+    background: true
+    border: true
+    circle: true
+    # This "svg_inner" function, you need to put your SVG inside
+    # the HTML in the sidebar. Enter the block:
+    # <!-- Add your SVG - BEGIN -->
+    # <!-- Add your SVG - END -->
+    # and, then create a stylesheet to configure svg.
+    flip:
+      enable: true
+      face:
+        svg_inner: false
+      back:
+        svg_inner: false
+    noflip:
+      face:
+        svg_inner: false
+  icons:
+    enable: true
+  socials:
+    enable: true
+content:
+  icons:
+    enable: true
+  postlist:
+    animation: true
+    date:
+      enable: true
+    expected:
+      enable: true
+    tags:
+      enable: true
+    comments:
+      enable: true
+  tagpost:
+    animation: true
+    date:
+      enable: true
+    expected:
+      enable: true
+    tags:
+      enable: true
+    comments:
+      enable: true
+  post:
+    reading_time:
+      enable: true
+    animation: true
+    author:
+      enable: true
+      avatar:
+        enable: true
+    share:
+      enable: true
+      facebook:
+        enable: true
+      linkedin:
+        enable: true
+      twitter:
+        enable: true
+    day_quote:
+      enable: true
+    comments:
+      enable: true
+  contact:
+    animation: true
+    note:
+      enable: true
+  error:
+    animation: true
+  resume:
+    animation: true
+    reading_time:
+      enable: true
+    image:
+      enable: true
+  page:
+    animation: true
+    reading_time:
+      enable: true

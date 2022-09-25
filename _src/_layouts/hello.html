@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+<!-- Include Data Base  -->
+{% include liquid/data %}
+
+{% if load_options.home.terminal.enable == true %}
+  <div class="px-1 mx-3 layout_hello" style="background-color: transparent !important; border: none !important;">
+{% else %}
+  <div class="p-1 m-1 p-lg-3 m-lg-3 layout_hello {% if load_options.home.animation == true %} animation__content {% endif %}">
+{% endif %}
+
+  {% if load_options.home.terminal.enable != true %}
+  <div class="layout_hello__header">
+
+    <div class="container-fluid">
+      <div class="row">
+        <h2 class="mb-4 font-weight-bold layout_hello__title">{{ page.title }}<span class="layout_hello__cursor">|</span></h2>
+      </div>
+    </div>
+
+  </div>
+  {% endif %}
+
+
+  <div class="layout_hello__content">
+
+    {% if load_options.home.terminal.enable != true %}
+
+    <div class="container-fluid">
+      <div class="d-block row">
+        {{ content }}
+      </div>
+    </div>
+
+    {% else %}
+
+    <div class="d-block row">
+    {% if load_data.website.theme == "hacking" %}
+    <div style="border: 1px solid #484848; box-shadow: none !important; -webkit-box-shadow: none !important;" class="mb-4 intro__terminal {% if load_options.home.terminal.animation == true %} animation__terminal {% endif %}">
+    {% else %}
+    <div class="mb-4 intro__terminal {% if load_options.home.terminal.animation == true %} animation__terminal {% endif %}">
+    {% endif %}
+      <header class="header">
+        <div class="btn header__btn header__btn--red" style="cursor: pointer;"></div>
+        <div class="btn header__btn header__btn--yellow" style="cursor: pointer;"></div>
+        <div class="btn header__btn header__btn--green" style="cursor: pointer;"></div>
+        <div class="title">
+          <span class="title__text">{{ load_data.website.terminal.text.user }}@{{ load_data.website.terminal.text.os }}:~</span>
+        </div>
+      </header>
+      <section class="body">
+        {% comment %} ./brief_description.py {% endcomment %}
+        <p class="body__output"><span><span class="body__output__user">{{ load_data.website.terminal.text.user }}</span><span class="body__output__at"> at </span><span class="body__output__os">{{ load_data.website.terminal.text.os }}</span> in <span class="body__output__dir">~$</span></span>
+          {{ load_data.website.terminal.text.command }}
+        </p>
+        {{ content }}
+        <p class="body__output"><span><span class="body__output__user">{{ load_data.website.terminal.text.user }}</span><span class="body__output__at"> at </span><span class="body__output__os">{{ load_data.website.terminal.text.os }}</span> in <span class="body__output__dir">~$</span></span>
+          <span class="layout_hello__cursor">_</span>
+        </p>
+      </section>
+    </div>
+  </div>
+  
+  {% endif %}
+
+  </div>
+</div>

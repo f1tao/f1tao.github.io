@@ -1,0 +1,144 @@
+---
+layout: blog
+---
+
+<!-- Include Data Base  -->
+{% include liquid/data %}
+
+<div class="px-3 mt-lg-0 layout_post {% if load_options.content.post.animation == true %} animation__content {% endif %}" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <!-- <div class="container-fluid"> -->
+
+
+    <div class="p-0 p-lg-3 mb-4 layout_post__header">
+      <h1 class="font-weight-bold layout_post__title">{{ page.title }}</h1>
+      <div class="layout_post__date">
+        <time class="layout_post__time">
+          {% if load_options.content.icons.enable == true %}<i class="far fa-calendar-alt"></i>{% endif %}
+          {% datelang page %}{% include datelang/page %}
+        </time>
+      </div>
+
+      <div class="layout_post__tags">
+        {% if load_options.content.icons.enable == true %}<i class="fa fa-tags"></i>&nbsp;{% endif %}Tags:&nbsp; |
+        {% for tag in page.tags %}
+        <a class="layout_post__tags-link" href="{{ '/blog/tags/' | prepend: site.baseurl | prepend: site.url }}/{{ tag }}">{{ tag }}</a> |
+        {% endfor %}
+      </div>
+
+      {% if load_options.content.post.reading_time.enable == true %}
+      <div class="layout_post__reading_time">
+        <i class="far fa-clock"></i>
+        {{ page.content | reading_time }}
+      </div>
+      {% endif %}
+
+    </div>
+
+    <div class="p-0 p-lg-3 mb-4 layout_post__content">
+      <div class="d-block">
+          <div class="py-3 row">
+            <div class="offset-6 col-6 offset-sm-9 col-sm-3 offset-lg-10 col-lg-2">
+            <!-- jekyll.environment == 'production' and -->
+            {% if jekyll.environment == 'production' and
+              load_options.content.post.comments.enable == true and
+              page.comments != false and
+              load_data.userdata.disqus.username and load_options.content.post.comments.count.enable == true %}
+              <div class="badge badge-light font-weight-normal layout_post__comments">
+                  {% if load_options.content.icons.enable == true %}
+                  <i class="fas fa-comments"></i>
+                  {% endif %}
+                  <a id="comments_in_post" class="mr-2 layout_post__comments-count"
+                    href="{{ page.url | prepend: site.baseurl | prepend: site.url }}#disqus_thread">
+                      0
+                  </a>
+                  {{ load_data.website.content.post.count_comments.text }}
+              </div>
+              {% endif %}
+              </div>
+            </div>
+        {{ content }}
+      </div>
+    </div>
+
+    <div class="p-0 p-lg-3 mb-4 layout_post__footer">
+    {% if load_options.content.post.day_quote.enable == true  %}
+    <div class="mb-5 layout_post__dayquote">
+      <h2 class="layout_post__dayquote-title">{{ page.day_quote.title }}</h2>
+      <p class="layout_post__dayquote-description">{{ page.day_quote.description }}</p>
+    </div>
+    {% endif %}
+
+    {% if load_options.content.post.share.enable == true  %}
+    <div class="layout_post__share">
+      <div class="row justify-content-center">
+        <h2>{{ load_data.website.content.post.share.title }}</h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="offset-0 offset-sm-0 offset-md-0 offset-lg-2"></div>
+
+        {% if load_options.content.post.share.facebook.enable == true %}
+        <div class="text-center mb-1 mb-sm-0 col-12 col-sm-3 col-md-3 col-lg-2">
+          <a class="btn btn-link btn-typing layout_post__share-fb" href="#" title="{{ dbase.website.strings.share_social.facebook.title }}" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;">Facebook</a>
+        </div>
+        {% endif %}
+
+        {% if load_options.content.post.share.linkedin.enable == true %}
+        <div class="text-center mb-1 mb-sm-0 col-12 col-sm-3 col-md-3 col-lg-2">
+          <a class="btn btn-link btn-typing layout_post__share-ln" href="http://www.linkedin.com/cws/share?url={{ page.url | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href,&quot;popupwindow&quot;,&quot;status=0,height=500,width=700,resizable=0,top=50,left=100&quot;);return false;" target="_blank" title="{{ dbase.website.strings.share_social.linkedin.title }}">Linkedin</a>
+        </div>
+        {% endif %}
+
+        {% if load_options.content.post.share.twitter.enable == true %}
+        <div class="text-center mb-1 mb-sm-0 col-12 col-sm-3 col-md-3 col-lg-2">
+          <a class="btn btn-link btn-typing layout_post__share-tw" href="https://twitter.com/intent/tweet?text={{ page.url | prepend: site.baseurl | prepend: site.url }} - {{ page.title }} by {{ dbase.userdata.twitter }}" target="_blank" title="{{ dbase.website.strings.share_social.twitter.title }}">Twitter</a>
+        </div>
+        {% endif %}
+
+        <div class="offset-0 offset-sm-0 offset-md-0 offset-lg-2"></div>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Affiliates Block -->
+    {% include partials/affiliates.html %}
+
+    {% if load_options.content.post.author.enable == true and
+      load_data.website.content.post.author.title and
+      load_data.website.content.post.author.name and
+      load_data.website.content.post.author.description %}
+    <div class="row mt-5 layout_post__author">
+      {% if load_options.content.post.author.avatar.enable == true and load_data.website.content.post.author.avatar %}
+      <div class="col-3 col-lg-2">
+        <img class="img-fluid layout_post__author-img" src="{{ '/assets/images/author' | prepend: site.baseurl }}/{{ load_data.website.content.post.author.avatar }}" width="140" height="auto" alt="{{ load_data.website.content.post.author.name }}">
+      </div>
+      {% endif %}
+      <div class="col-9 col-lg-10 {% if load_options.content.post.author.avatar.enable != true %} col-12 {% endif %}">
+        <p class="layout_post__author-title">{{ load_data.website.content.post.author.title }}</p>
+        <h2 class="font-weight-bold layout_post__author-name">{{ load_data.website.content.post.author.name }}</h2>
+        <p class="layout_post__author-description">{{ load_data.website.content.post.author.description }}</p>
+      </div>
+    </div>
+  {% endif %}
+  </div>
+
+    <!-- jekyll.environment == 'production' and -->
+    {% if jekyll.environment == 'production' and
+    load_options.content.post.comments.enable == true and
+    page.comments != false and
+    load_data.userdata.disqus.username %}
+    <div id="layout_post__disqus" class="p-3 mb-4 layout_post__disqus">
+        <h2 class="text-center mb-5 layout_post__disqus-title">
+            {% if load_options.content.icons.enable == true %}
+              <i class="fas fa-comments layout_post__disqus-icon"></i>
+            {% endif %}
+          {{ load_data.website.content.post.comments.title }}
+        </h2>
+      <div class="layout_post__disqus-content">
+          {% include scripts/disqus_comments.html %}
+      </div>
+    </div>
+    {% endif %}
+
+  <!-- </div> -->
+</div>

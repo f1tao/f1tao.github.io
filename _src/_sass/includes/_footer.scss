@@ -1,0 +1,16 @@
+/* Stylesheets for include Footer
+––––––––––––––––––––––––––––––––––––––––––––––––––  */
+
+.footer{
+  background-color: $footer__bg;
+  font-size: 0.8rem;
+  color: $color__text;
+}
+
+.scrolltop{
+  color: $color__text;
+  font-size: 3rem;
+  &__button{
+    font-size: 3rem !important;
+  }
+}
