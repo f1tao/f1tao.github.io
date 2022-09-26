@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 关于
+title: About me
 permalink: /about/
 ---
 
-这是一个关于页面，请编辑about.md以介绍你的博客。
+f0cus77.
