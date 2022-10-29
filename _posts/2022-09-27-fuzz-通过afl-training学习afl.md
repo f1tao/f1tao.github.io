@@ -3,7 +3,7 @@ layout: post
 title: fuzz 通过afl-training学习afl
 date: 2022-09-27
 Author: f0cus77
-tags: [fuzz]
+tags: [fuzz, afl]
 comments: true
 toc: true
 ---
