@@ -320,7 +320,7 @@ img {
 //
 
 .wrapper-sidebar {
-  width: 15%;
+  width: 20%;
 	-webkit-background-size: cover;
 	background-size: cover;
 	background-color: $background-color;
@@ -430,7 +430,7 @@ nav {
 
 .wrapper-content {
   float: right;
-  width: 70%;
+  width: 80%;
 
   @include mobile {
     float: none;
@@ -533,7 +533,7 @@ nav {
 .toc {
   width: 240px;
   height: 100%;
-  left: 15%;
+  left: 20%;
   position: fixed;
   z-index: 4;
   padding: 60px 20px 0 20px;
