@@ -62,11 +62,11 @@ footer-links:
   rss: #随便填点啥RSS就能用了
   stackoverflow: # http://stackoverflow.com/<>
   tumblr: # https://<username>.tumblr.com
-  twitter: # https://www.twitter.com/<your_twitter_username> 
+  twitter:  https://www.twitter.com/f0cus7_7 
   youtube: # channel/<your_long_string> or user/<user-name>
 
 # 站点页脚的文字
-footer-text: Copyright (c) 2022
+footer-text: f0cus77@Copyright (c) 2022
 
 #
 # 评论，注意，请不要同时添加多种不同的评论区
