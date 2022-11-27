@@ -86,6 +86,9 @@ gitalk:
 # 输入Google Analytics web tracking code
 google_analytics: G-Z8DDQ49SXB 
 
+# Baidu TIMD
+baidu_analytics: e8a946ac4cb5bf77655caad902a98c89
+
 utteranc:
   repo: # Your github repo path, also see: https://utteranc.es
 
