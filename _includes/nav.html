@@ -9,6 +9,7 @@
     </div>
   </header>
 
+  
   <div class="navlist">
     <nav>
       {% for nav in site.navigation %}
@@ -20,6 +21,13 @@
       {% endfor %}
     </nav>
   </div>
+
+  <div class="wechat_official">
+    {% if site.avatar %}
+        <a href="{{ site.baseurl }}/" class="wechat_official"><img src="{{ site.wechat_official }}" /></a>
+    {% endif %} 
+  </div>
+  
   <div class="wrapper-footer-desktop">
     <footer class="footer">
       {% include footer.html %}
