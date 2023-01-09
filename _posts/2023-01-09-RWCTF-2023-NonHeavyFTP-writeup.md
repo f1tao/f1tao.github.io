@@ -1,4 +1,12 @@
-# RWCTF 2023 NonHeavyFTP writeup
+---
+layout: post
+title: RWCTF 2023 NonHeavyFTP writeup
+date: 2023-01-09
+Author: f0cus77
+tags: [ctf]
+comments: true
+toc: true
+---
 
 A FTP Server pwn chanllenge.
 
