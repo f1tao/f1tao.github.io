@@ -928,6 +928,8 @@ keep_as_crash:
 
 后续`fuzzer`的设计应当考虑除了路径覆盖，还有哪些反馈的信息可以用来作为种子是否有效的判定。
 
+文章首发于[跳跳糖社区](https://tttang.com/archive/1753/)
+
 ## 参考
 
 1. [Technical "whitepaper" for afl-fuzz](https://lcamtuf.coredump.cx/afl/technical_details.txt)

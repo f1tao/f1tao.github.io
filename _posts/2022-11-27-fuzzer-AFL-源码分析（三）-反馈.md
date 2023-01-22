@@ -833,6 +833,8 @@ EXP_ST void init_forkserver(char** argv) {
 
 貌似现在挺多的`fuzzer`都是用的这一套机制来进行模糊测试，前段时间看的`fuzzilli`也是用这一套共享内存以及管道来实现的模糊测试。
 
+文章首发于[跳跳糖社区](https://tttang.com/archive/1707/)
+
 ## 参考
 
 1. [Technical "whitepaper" for afl-fuzz](https://lcamtuf.coredump.cx/afl/technical_details.txt)
