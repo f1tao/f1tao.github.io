@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 沙箱逃逸之0ctf2020 chromium_rce writeup
-date: 2023-01-22
+date: 2023-01-29
 Author: f0cus77
 tags: [ctf, browser]
 comments: true
