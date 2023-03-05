@@ -2,7 +2,7 @@
 layout: post
 title: 沙箱逃逸之plaidctf 2020 mojo writeup
 date: 2022-12-11
-Author: f0cus77
+Author: f1tao
 tags: [ctf, browser]
 comments: true
 toc: true
@@ -527,7 +527,7 @@ pwn();
 
 最终弹出个计算器，开心。
 
-![poc](https://raw.githubusercontent.com/f0cus77/f0cus77.github.io/master/images/2022-12-11-沙箱逃逸之plaidctf-2020-mojo-writeup/poc.png)
+![poc](https://raw.githubusercontent.com/f1tao/f1tao.github.io/master/images/2022-12-11-沙箱逃逸之plaidctf-2020-mojo-writeup/poc.png)
 
 ## 总结
 

@@ -2,7 +2,7 @@
 layout: post
 title: fuzzer AFL 源码分析（五）-变异
 date: 2023-01-22
-Author: f0cus77
+Author: f1tao
 tags: [fuzz, afl]
 comments: true
 toc: true

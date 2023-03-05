@@ -2,13 +2,13 @@
 layout: post
 title: 沙箱逃逸之google ctf 2019 Monochromatic writeup
 date: 2022-12-31
-Author: f0cus77
+Author: f1tao
 tags: [ctf, browser]
 comments: true
 toc: true
 ---
 
-这是入门chrome沙箱逃逸的第二篇文章，[第一篇](https://f0cus77.github.io/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8%E4%B9%8Bplaidctf-2020-mojo-writeup/)文章分析了一道题目，这里再来看19年的google ctf的题目，进一步掌握沙箱逃逸的漏洞原理。
+这是入门chrome沙箱逃逸的第二篇文章，[第一篇](https://f1tao.github.io/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8%E4%B9%8Bplaidctf-2020-mojo-writeup/)文章分析了一道题目，这里再来看19年的google ctf的题目，进一步掌握沙箱逃逸的漏洞原理。
 
 
 ## 基础知识--JS Bindings Api
@@ -20,7 +20,7 @@ toc: true
 * `Higher-Level System APIs`：高级语言相关的抽象接口，将上面一层的接口（`Mojo System API`）根据不同语言的特性进行进一步封装实现，目前支持的语言包括：`C++`、`JS`以及`Java`；
 * `Bindings APIs`：用[mojom Interface Definition Language (IDL)](https://chromium.googlesource.com/chromium/src.git/+/refs/heads/main/mojo/public/tools/bindings/README.md) 来生成的各类接口实现，是最终用来绑定接口的api实现，是上面一层接口的进一步实现，也是大多数用户开发使用的`api`，目前支持的语言包括：`C++`、`JS`以及`Java`。
 
-![mojo_overview](https://raw.githubusercontent.com/f0cus77/f0cus77.github.io/master/images/2022-12-31-沙箱逃逸之google-ctf-2019-Monochromatic-writeup/mojo_overview.png)
+![mojo_overview](https://raw.githubusercontent.com/f1tao/f1tao.github.io/master/images/2022-12-31-沙箱逃逸之google-ctf-2019-Monochromatic-writeup/mojo_overview.png)
 
 之前看的`mojo`的`bindings api`都是使用的`c++`来实现`render`与`browser`之间的通信。根据上面的描述可知，事实上我们也可以使用`js bindings api`来实现通信，本小节主要是简单介绍如何使用`js bindings api`来实现`mojo`通信，参考的主要文章是[Mojo JavaScript Bindings API](https://chromium.googlesource.com/chromium/src.git/+/refs/heads/main/mojo/public/js/README.md)。
 
@@ -546,7 +546,7 @@ FoodInterfaceImpl.prototype.getDescription = async function() {
 
 成功弹出计算器。
 
-![poc](https://raw.githubusercontent.com/f0cus77/f0cus77.github.io/master/images/2022-12-31-沙箱逃逸之google-ctf-2019-Monochromatic-writeup/poc.png)
+![poc](https://raw.githubusercontent.com/f1tao/f1tao.github.io/master/images/2022-12-31-沙箱逃逸之google-ctf-2019-Monochromatic-writeup/poc.png)
 
 要提一点的是在泄露虚表的时候，可能是因为`mojo`的编码问题，直接读出来的地址不对，需要对数据进行编码，加上下面的代码就可以了，原因我现在还搞不懂，先放着。
 

@@ -2,7 +2,7 @@
 layout: post
 title: RWCTF 2023 NonHeavyFTP writeup
 date: 2023-01-09
-Author: f0cus77
+Author: f1tao
 tags: [ctf]
 comments: true
 toc: true
@@ -27,7 +27,7 @@ $ nc 47.89.253.219 2121
 $ nc 47.89.253.219 2221
 ```
 
-Download the [attachment](https://github.com/f0cus77/CTF/blob/main/RWCTF-2023/NonHeavyFTP/NonHeavyFTP.zip) of the chanllenge.
+Download the [attachment](https://github.com/f1tao/CTF/blob/main/RWCTF-2023/NonHeavyFTP/NonHeavyFTP.zip) of the chanllenge.
 
 ```bash
 $ ls
@@ -299,7 +299,7 @@ retr remote port: 42644
 flag: rwctf{race-c0nd1tion-1s-real1y_ha4d_pr0blem!!!}
 ```
 
-The full exp is in my [github](https://github.com/f0cus77/CTF/tree/main/RWCTF-2023/NonHeavyFTP).
+The full exp is in my [github](https://github.com/f1tao/CTF/tree/main/RWCTF-2023/NonHeavyFTP).
 
 ## Debug
 

@@ -2,7 +2,7 @@
 layout: post
 title: fuzzer AFL 源码分析（一）- 编译
 date: 2022-10-29
-Author: f0cus77
+Author: f1tao
 tags: [fuzz, afl]
 comments: true
 toc: true
@@ -27,7 +27,7 @@ afl-fuzz -i in -o out ./fuzzer
 
 `gcc`对编译程序的过程如下图所示，将一个`demo`程序`hello.c`编译成可执行的二进制文件需要经过`hello.i`、`hello.s`、`hello.o`、`hello`四个步骤。
 
-![gcc-compile-flow](https://raw.githubusercontent.com/f0cus77/f0cus77.github.io/master/images/2022-10-29-fuzzer-AFL-源码分析（一）-编译/gcc-compile-flow.png)
+![gcc-compile-flow](https://raw.githubusercontent.com/f1tao/f1tao.github.io/master/images/2022-10-29-fuzzer-AFL-源码分析（一）-编译/gcc-compile-flow.png)
 
 命令`gcc hello.c -o hello`生成二进制文件`hello`的过程可以分解为：
 
@@ -402,11 +402,11 @@ static void edit_params(u32 argc, char** argv) {
 pwndbg> print cc_params[0]
 $21 = (u8 *) 0x5555555576ac "gcc"
 pwndbg> print cc_params[1]
-$22 = (u8 *) 0x7fffffffe47b "/home/f0cus77/Desktop/hello.c"
+$22 = (u8 *) 0x7fffffffe47b "/home/f1tao/Desktop/hello.c"
 pwndbg> print cc_params[2]
 $23 = (u8 *) 0x555555557794 "-B"
 pwndbg> print cc_params[3]
-$24 = (u8 *) 0x55555555a2a8 "/home/f0cus77/Desktop/AFL"
+$24 = (u8 *) 0x55555555a2a8 "/home/f1tao/Desktop/AFL"
 pwndbg> print cc_params[4]
 $25 = (u8 *) 0x55555555781c "-g"
 pwndbg> print cc_params[5]

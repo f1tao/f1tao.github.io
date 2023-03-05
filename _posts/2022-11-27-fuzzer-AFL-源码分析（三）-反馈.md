@@ -2,7 +2,7 @@
 layout: post
 title: fuzzer AFL 源码分析（三）-反馈
 date: 2022-11-27
-Author: f0cus77
+Author: f1tao
 tags: [fuzz, afl]
 comments: true
 toc: true
@@ -162,9 +162,9 @@ int main(int argc, char** argv)
 
 运行结果：
 
-![writer](https://raw.githubusercontent.com/f0cus77/f0cus77.github.io/master/images/2022-11-27-fuzzer-AFL-源码分析（三）-反馈/writer.png)
+![writer](https://raw.githubusercontent.com/f1tao/f1tao.github.io/master/images/2022-11-27-fuzzer-AFL-源码分析（三）-反馈/writer.png)
 
-![reader](https://raw.githubusercontent.com/f0cus77/f0cus77.github.io/master/images/2022-11-27-fuzzer-AFL-源码分析（三）-反馈/reader.png)
+![reader](https://raw.githubusercontent.com/f1tao/f1tao.github.io/master/images/2022-11-27-fuzzer-AFL-源码分析（三）-反馈/reader.png)
 
 ## 反馈信息记录
 

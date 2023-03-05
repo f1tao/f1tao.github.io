@@ -8,7 +8,7 @@
 
 # 描述/签名
 title: 来  过
-name: F0CUS77
+name: F1TAO
 description: 努力的最坏结果，不过是大器晚成。
 
 # 输入你的网站域名（如果你没有添加自己的域名，而是直接用GitHub pages分配的域名的话可以省略）
@@ -25,12 +25,12 @@ baseurl: /
 #
 
 # 你的博客logo图片URL，建议尺寸不超过300px × 300px
-avatar: https://raw.githubusercontent.com/f0cus77/f0cus77.github.io/master/images/logo.png
+avatar: https://raw.githubusercontent.com/f1tao/f1tao.github.io/master/images/logo.png
 
 # 你的favicon（出现在浏览器tab上）图片URL，建议使用较小(64px × 64px)的图片
-favicon: https://raw.githubusercontent.com/f0cus77/f0cus77.github.io/master/images/favicon.png
+favicon: https://raw.githubusercontent.com/f1tao/f1tao.github.io/master/images/favicon.png
 
-wechat_official: https://raw.githubusercontent.com/f0cus77/f0cus77.github.io/master/images/official.jpg
+wechat_official: https://raw.githubusercontent.com/f1tao/f1tao.github.io/master/images/official.jpg
 
 
 # 菜单中的按钮
@@ -55,21 +55,21 @@ footer-links:
   weibo:  #请输入你的微博个性域名 https://www.weibo.com/<thispart>
   behance: # https://www.behance.net/<>
   dribbble: # https://dribbble.com/<>
-  email:  f0cus77@proton.me
+  email:  f1tao@proton.me
   facebook: #https://www.facebook.com/<>
   flickr: #https://www.flickr.com/<>
-  github: f0cus77
+  github: f1tao
   instagram: #https://instagram.com/<>
   linkedin: #https://www.linkedin.com/in/<>
   pinterest: #https://www.pinterest.com/<>
   rss: #随便填点啥RSS就能用了
   stackoverflow: # http://stackoverflow.com/<>
   tumblr: # https://<username>.tumblr.com
-  twitter: f0cus7_7 
+  twitter: f1tao 
   youtube: # channel/<your_long_string> or user/<user-name>
 
 # 站点页脚的文字
-footer-text: f0cus77@Copyright (c) 2022
+footer-text: f1tao@Copyright (c) 2023
 
 #
 # 评论，注意，请不要同时添加多种不同的评论区

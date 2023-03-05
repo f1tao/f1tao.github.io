@@ -2,7 +2,7 @@
 layout: post
 title: fuzzer AFL 源码分析（二）-fuzz流程
 date: 2022-11-13
-Author: f0cus77
+Author: f1tao
 tags: [fuzz, afl]
 comments: true
 toc: true
@@ -25,7 +25,7 @@ toc: true
 5. 如果经过变异文件更新了覆盖范围，则将其保留添加到队列中;
 6. 上述过程会一直循环进行，期间触发了`crash`的文件会被记录下来。
 
-![afl-fuzz-flow](https://raw.githubusercontent.com/f0cus77/f0cus77.github.io/master/images/2022-11-13-fuzzer-AFL-源码分析（二）-fuzz流程/afl-fuzz-flow.png)
+![afl-fuzz-flow](https://raw.githubusercontent.com/f1tao/f1tao.github.io/master/images/2022-11-13-fuzzer-AFL-源码分析（二）-fuzz流程/afl-fuzz-flow.png)
 
 ## afl-fuzz 源码分析
 

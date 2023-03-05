@@ -2,7 +2,7 @@
 layout: post
 title: 沙箱逃逸之0ctf2020 chromium_rce writeup
 date: 2023-01-29
-Author: f0cus77
+Author: f1tao
 tags: [ctf, browser]
 comments: true
 toc: true
@@ -57,11 +57,11 @@ console.log(uint8); // Uint8Array [ 0, 0, 0, 1, 2, 3, 0, 0 ]
 
 再来看`ecma`标准中对于[TypedArray.prototype.set](https://tc39.es/ecma262/#sec-%25typedarray%25.prototype.set-overloaded-offset)函数实现的规定，如下所示。
 
-![set](https://raw.githubusercontent.com/f0cus77/f0cus77.github.io/master/images/2023-01-29-沙箱逃逸之0ctf2020-chromium_rce-writeup/set.png)
+![set](https://raw.githubusercontent.com/f1tao/f1tao.github.io/master/images/2023-01-29-沙箱逃逸之0ctf2020-chromium_rce-writeup/set.png)
 
 可以看到会对源数组和目的数据的长度进行检查后，调用`SetTypedArrayFromArrayLike`函数，该函数部分定义如下。
 
-![set1](https://raw.githubusercontent.com/f0cus77/f0cus77.github.io/master/images/2023-01-29-沙箱逃逸之0ctf2020-chromium_rce-writeup/set1.png)
+![set1](https://raw.githubusercontent.com/f1tao/f1tao.github.io/master/images/2023-01-29-沙箱逃逸之0ctf2020-chromium_rce-writeup/set1.png)
 
 很关键的一点是会在该函数中调用`IsDetachedBuffer`来检查源数组以及目的数组存放数据的空间是否已经被释放，如果被释放则抛出异常。如果这两个空间都没被释放，说明内存空间可用，可以正常拷贝；如果某个内存空间被释放的话，如果仍然正常使用，则形成了`UAF`漏洞。
 
@@ -183,8 +183,8 @@ b.set(a) // read from freed mem
 #13 0x00007f3b7fd00277 in v8::internal::(anonymous namespace)::ConstructBuffer (isolate=0x2c4a00000000, target=..., new_target=..., length=..., initialized=v8::internal::InitializedFlag::kZeroInitialized) at ../../src/builtins/builtins-arraybuffer.cc:56
 #14 0x00007f3b7fcfde82 in v8::internal::Builtin_Impl_ArrayBufferConstructor (args=..., isolate=0x2c4a00000000) at ../../src/builtins/builtins-arraybuffer.cc:92
 #15 0x00007f3b7fcfd69e in v8::internal::Builtin_ArrayBufferConstructor (args_length=0x6, args_object=0x7fff5cf946f8, isolate=0x2c4a00000000) at ../../src/builtins/builtins-arraybuffer.cc:70
-#16 0x00007f3b7f75563f in Builtins_CEntry_Return1_DontSaveFPRegs_ArgvOnStack_BuiltinExit () from /home/f0cus77/work/pwn/v8/v8/out/x64.debug/libv8.so
-#17 0x00007f3b7f51e265 in Builtins_JSBuiltinsConstructStub () from /home/f0cus77/work/pwn/v8/v8/out/x64.debug/libv8.so
+#16 0x00007f3b7f75563f in Builtins_CEntry_Return1_DontSaveFPRegs_ArgvOnStack_BuiltinExit () from /home/f1tao/work/pwn/v8/v8/out/x64.debug/libv8.so
+#17 0x00007f3b7f51e265 in Builtins_JSBuiltinsConstructStub () from /home/f1tao/work/pwn/v8/v8/out/x64.debug/libv8.so
 #18 0x00002c4a08246ac9 in ?? ()
 #19 0x00002c4a08246ac9 in ?? ()
 #20 0x000000000000000c in ?? ()
@@ -195,7 +195,7 @@ b.set(a) // read from freed mem
 #25 0x00002c4a08240229 in ?? ()
 #26 0x0000000000000024 in ?? ()
 #27 0x00007fff5cf947a8 in ?? ()
-#28 0x00007f3b7f96b1d8 in Builtins_CreateTypedArray () from /home/f0cus77/work/pwn/v8/v8/out/x64.debug/libv8.so
+#28 0x00007f3b7f96b1d8 in Builtins_CreateTypedArray () from /home/f1tao/work/pwn/v8/v8/out/x64.debug/libv8.so
 ```
 
 使用如下形式却是可以触发`malloc`的。
@@ -225,7 +225,7 @@ return new Uint8Array(a);
 #13 0x00007f9a96356277 in v8::internal::(anonymous namespace)::ConstructBuffer (isolate=0x142000000000, target=..., new_target=..., length=..., initialized=v8::internal::InitializedFlag::kUninitialized) at ../../src/builtins/builtins-arraybuffer.cc:56
 #14 0x00007f9a963542bf in v8::internal::Builtin_Impl_ArrayBufferConstructor_DoNotInitialize (args=..., isolate=0x142000000000) at ../../src/builtins/builtins-arraybuffer.cc:104
 #15 0x00007f9a96353fae in v8::internal::Builtin_ArrayBufferConstructor_DoNotInitialize (args_length=0x6, args_object=0x7ffc940ddf48, isolate=0x142000000000) at ../../src/builtins/builtins-arraybuffer.cc:99
-#16 0x00007f9a95dab63f in Builtins_CEntry_Return1_DontSaveFPRegs_ArgvOnStack_BuiltinExit () from /home/f0cus77/work/pwn/v8/v8/out/x64.debug/libv8.so
+#16 0x00007f9a95dab63f in Builtins_CEntry_Return1_DontSaveFPRegs_ArgvOnStack_BuiltinExit () from /home/f1tao/work/pwn/v8/v8/out/x64.debug/libv8.so
 #17 0x00007f9a95fbed6c in Builtins_CreateTypedArray () 
 ```
 

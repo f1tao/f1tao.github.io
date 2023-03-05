@@ -2,7 +2,7 @@
 layout: post
 title: fuzzer AFL 源码分析（四）-监控
 date: 2022-12-18
-Author: f0cus77
+Author: f1tao
 tags: [fuzz, afl]
 comments: true
 toc: true
